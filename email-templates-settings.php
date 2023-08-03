@@ -11,6 +11,7 @@ function email_subscription_plugin_email_template_page()
         echo '<p>No templates available.</p>';
     } else {
     ?>
+
         <table class="wp-list-table widefat fixed striped">
             <thead>
                 <tr>

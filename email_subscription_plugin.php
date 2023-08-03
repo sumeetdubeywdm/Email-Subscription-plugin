@@ -15,15 +15,8 @@ require_once plugin_dir_path(__FILE__) . 'plugin-settings.php';
 require_once plugin_dir_path(__FILE__) . 'email-templates-settings.php';
 
 
-
-
 add_action('admin_init', 'email_subscription_Plugin_register_settings');
 add_action('admin_init', 'email_subscription_Plugin_register_email_templates');
-
-
-
-// Hook the function to the appropriate action
-
 
 
 // Send email via SMTP
@@ -40,3 +33,4 @@ function my_phpmailer_fun($phpmailer)
     $phpmailer->From = SMTP_FROM;
     $phpmailer->FromName = SMTP_NAME;
 }
+

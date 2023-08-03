@@ -9,6 +9,7 @@ class email_subscription_Admin_Menu
         add_action('admin_menu', array($this, 'add_main_menu'));
         add_action('admin_menu', array($this, 'add_submenus'));
         add_action('wp_enqueue_scripts', array($this,'email_sub_enqueue_styles'));
+       
     }
 
 
@@ -62,6 +63,10 @@ class email_subscription_Admin_Menu
         $css_file_url = plugin_dir_url(__FILE__) . '../css/emailsub.css';
         wp_enqueue_style('emailsub', $css_file_url);
     }
+
+      
+      
+      
 }
 
 

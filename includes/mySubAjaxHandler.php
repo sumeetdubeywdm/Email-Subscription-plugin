@@ -24,15 +24,16 @@ class mySubAjaxHandler
     public function form_shortcode()
     {
         ob_start();
-?>
+    ?>
         <form id="my-subscription-form">
             <input type="email" name="email" required placeholder="Enter your email">
             <button type="submit" id="subscribe-button">Subscribe Me</button>
         </form>
         <div id="subscription-message"></div>
-<?php
+    <?php
         return ob_get_clean();
     }
+    
 
 
     public function ajax_handler()

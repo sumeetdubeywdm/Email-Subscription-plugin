@@ -1,8 +1,10 @@
 jQuery(document).ready(function ($) {
+  
+
   $("#my-subscription-form").on("submit", function (e) {
     e.preventDefault();
     var email = $('input[name="email"]').val();
-
+    var spinner = '<div class="email-sub-plugin-spinner" role="status" style:"padding-left:20px"></div><span class="email-sub-text">Please wait...</span>';
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       alert("Invalid email address.");
@@ -20,7 +22,8 @@ jQuery(document).ready(function ($) {
       beforeSend: function () {
         // Disable the button before sending the AJAX request
         $('#my-subscription-form button[type="submit"]').prop("disabled", true)
-          .addClass("disabled");
+          .addClass("disabled").html(spinner);
+          
       },
       success: function (response) {
         if (response.success) {
@@ -39,7 +42,7 @@ jQuery(document).ready(function ($) {
         // Re-enable the button after the AJAX request is complete (success or error)
         $('#my-subscription-form button[type="submit"]')
           .prop("disabled", false)
-          .removeClass("disabled");
+          .removeClass("disabled").text("Subscribe Me");
       },
     });
   });
