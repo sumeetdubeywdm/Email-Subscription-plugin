@@ -14,7 +14,7 @@ class wdmEmailSubAjaxHandler
     public function enqueue_scripts()
     {
         wp_enqueue_script('jquery');
-        wp_enqueue_script('email-subscription-script', plugin_dir_url(__FILE__) . '../js/email-subscription-script.js');
+        wp_enqueue_script('email-subscription-script', plugin_dir_url(__FILE__) . '../public/js/email-subscription-script.js');
 
         wp_localize_script('email-subscription-script', 'my_subscription_ajax_object', array(
             'ajaxurl' => admin_url('admin-ajax.php'),
