@@ -58,6 +58,9 @@ class wdmEmailSubAjaxHandler
                 'Content-Type: text/html; charset=UTF-8',
             );
 
+             // updated the placeholder with user mail
+             $message = str_replace('{useremail}', $email, $message);
+
             $full_message = 'Hey!! ' . $email . "\n\n" . $message;
 
             $result = wp_mail($email, $subject, $full_message, $header);
